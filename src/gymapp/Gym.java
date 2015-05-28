@@ -17,6 +17,9 @@ public class Gym extends javax.swing.JFrame {
      */
     public Gym() {
         initComponents();
+        ConsoleWriter.getInstance().setJTextArea(jConsoleTextArea);
+        ConsoleWriter.getInstance().write("Hello world!");
+        ConsoleWriter.getInstance().write("Hello world!");
     }
 
     /**
@@ -44,12 +47,12 @@ public class Gym extends javax.swing.JFrame {
         jButtonAddTables = new javax.swing.JButton();
         jButtonRemoveAllTables = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jConsoleTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gym");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Клієнти", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнти"));
 
         jButtonAddClient.setText("Додати клієнта");
 
@@ -76,7 +79,7 @@ public class Gym extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Тренери", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Тренери"));
 
         jButtonAddTrainer.setText("Додати тренера");
 
@@ -100,7 +103,7 @@ public class Gym extends javax.swing.JFrame {
                 .addComponent(jButtonRemoveTrainer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonShowAllTrainers)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Оплата"));
@@ -129,7 +132,7 @@ public class Gym extends javax.swing.JFrame {
                 .addComponent(jButtonShowReport))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Робота з БД", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Робота з БД"));
 
         jButtonAddTables.setText("Додати таблиці до БД");
         jButtonAddTables.addActionListener(new java.awt.event.ActionListener() {
@@ -155,10 +158,10 @@ public class Gym extends javax.swing.JFrame {
                 .addComponent(jButtonRemoveAllTables))
         );
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jConsoleTextArea.setEditable(false);
+        jConsoleTextArea.setColumns(20);
+        jConsoleTextArea.setRows(5);
+        jScrollPane1.setViewportView(jConsoleTextArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,12 +249,12 @@ public class Gym extends javax.swing.JFrame {
     private javax.swing.JButton jButtonShowAllClients;
     private javax.swing.JButton jButtonShowAllTrainers;
     private javax.swing.JButton jButtonShowReport;
+    private javax.swing.JTextArea jConsoleTextArea;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldFrom;
     private javax.swing.JTextField jTextFieldTo;
     // End of variables declaration//GEN-END:variables

@@ -67,9 +67,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="&#x41a;&#x43b;&#x456;&#x454;&#x43d;&#x442;&#x438;">
-              <Color PropertyName="color" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-            </TitledBorder>
+            <TitledBorder title="&#x41a;&#x43b;&#x456;&#x454;&#x43d;&#x442;&#x438;"/>
           </Border>
         </Property>
       </Properties>
@@ -117,9 +115,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="&#x422;&#x440;&#x435;&#x43d;&#x435;&#x440;&#x438;">
-              <Color PropertyName="color" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-            </TitledBorder>
+            <TitledBorder title="&#x422;&#x440;&#x435;&#x43d;&#x435;&#x440;&#x438;"/>
           </Border>
         </Property>
       </Properties>
@@ -140,7 +136,7 @@
                   <Component id="jButtonRemoveTrainer" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonShowAllTrainers" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="13" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -214,9 +210,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="&#x420;&#x43e;&#x431;&#x43e;&#x442;&#x430; &#x437; &#x411;&#x414;">
-              <Color PropertyName="color" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-            </TitledBorder>
+            <TitledBorder title="&#x420;&#x43e;&#x431;&#x43e;&#x442;&#x430; &#x437; &#x411;&#x414;"/>
           </Border>
         </Property>
       </Properties>
@@ -261,7 +255,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
+        <Component class="javax.swing.JTextArea" name="jConsoleTextArea">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
