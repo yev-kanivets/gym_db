@@ -98,16 +98,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x414;&#x43e;&#x434;&#x430;&#x442;&#x438; &#x43a;&#x43b;&#x456;&#x454;&#x43d;&#x442;&#x430;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddClientActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonRemoveClient">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x412;&#x438;&#x434;&#x430;&#x43b;&#x438;&#x442;&#x438; &#x43a;&#x43b;&#x456;&#x454;&#x43d;&#x442;&#x430; "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRemoveClientActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonShowAllClients">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x41e;&#x431;&#x43b;&#x456;&#x43a; &#x43a;&#x43b;&#x456;&#x454;&#x43d;&#x442;&#x456;&#x432;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShowAllClientsActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

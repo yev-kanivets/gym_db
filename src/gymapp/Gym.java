@@ -57,10 +57,25 @@ public class Gym extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнти"));
 
         jButtonAddClient.setText("Додати клієнта");
+        jButtonAddClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddClientActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveClient.setText("Видалити клієнта ");
+        jButtonRemoveClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveClientActionPerformed(evt);
+            }
+        });
 
         jButtonShowAllClients.setText("Облік клієнтів");
+        jButtonShowAllClients.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShowAllClientsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -271,6 +286,35 @@ public class Gym extends javax.swing.JFrame {
             ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
         }
     }//GEN-LAST:event_jButtonShowAllTrainersActionPerformed
+
+    private void jButtonAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddClientActionPerformed
+        Clients clients = new Clients();
+        try {
+            clients.addClient();
+            ConsoleWriter.getInstance().write("Clients inserted successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonAddClientActionPerformed
+
+    private void jButtonRemoveClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveClientActionPerformed
+        Clients clients = new Clients();
+        try {
+            clients.removeClient();
+            ConsoleWriter.getInstance().write("Client removed successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonRemoveClientActionPerformed
+
+    private void jButtonShowAllClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllClientsActionPerformed
+        Clients clients = new Clients();
+        try {
+            clients.showClients();
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonShowAllClientsActionPerformed
 
     /**
      * @param args the command line arguments
