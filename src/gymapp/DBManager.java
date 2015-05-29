@@ -41,7 +41,7 @@ public class DBManager {
         
         String sqlCreateReports = "CREATE TABLE Reports" +
                 "(id INT PRIMARY KEY NOT NULL," +
-                " date DATE NOT NULL," +
+                " date CHAR(10) NOT NULL," +
                 " paid INT NOT NULL," +
                 " client_id INT NOT NULL," +
                 " subscription_id INT NOT NULL," +

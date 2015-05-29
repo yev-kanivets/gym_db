@@ -6,7 +6,9 @@
 
 package gymapp;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -141,6 +143,11 @@ public class Gym extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Оплата"));
 
         jButtonShowReport.setText("Облік оплати");
+        jButtonShowReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShowReportActionPerformed(evt);
+            }
+        });
 
         jTextFieldFrom.setToolTipText("от");
 
@@ -315,6 +322,27 @@ public class Gym extends javax.swing.JFrame {
             ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
         }
     }//GEN-LAST:event_jButtonShowAllClientsActionPerformed
+
+    private void jButtonShowReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowReportActionPerformed
+        Date dateFrom = new Date(0);
+        Date dateTo = new Date(System.currentTimeMillis());
+        
+        try {
+            dateFrom = Date.valueOf(jTextFieldFrom.getText());
+            dateTo = Date.valueOf(jTextFieldTo.getText());
+        } catch (IllegalArgumentException ex) {
+            ConsoleWriter.getInstance().write("Wrong date format.");
+        }
+        
+        Reports reports = new Reports();
+        try {
+            reports.filterData(dateFrom, dateTo);
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        } catch (ParseException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonShowReportActionPerformed
 
     /**
      * @param args the command line arguments

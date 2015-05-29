@@ -211,6 +211,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x41e;&#x431;&#x43b;&#x456;&#x43a; &#x43e;&#x43f;&#x43b;&#x430;&#x442;&#x438;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShowReportActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldFrom">
           <Properties>
