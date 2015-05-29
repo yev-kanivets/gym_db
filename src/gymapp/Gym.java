@@ -6,6 +6,10 @@
 
 package gymapp;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author fess
@@ -18,8 +22,6 @@ public class Gym extends javax.swing.JFrame {
     public Gym() {
         initComponents();
         ConsoleWriter.getInstance().setJTextArea(jConsoleTextArea);
-        ConsoleWriter.getInstance().write("Hello world!");
-        ConsoleWriter.getInstance().write("Hello world!");
     }
 
     /**
@@ -82,10 +84,25 @@ public class Gym extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Тренери"));
 
         jButtonAddTrainer.setText("Додати тренера");
+        jButtonAddTrainer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddTrainerActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveTrainer.setText("Видалити тренера ");
+        jButtonRemoveTrainer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveTrainerActionPerformed(evt);
+            }
+        });
 
         jButtonShowAllTrainers.setText("Облік тренерів");
+        jButtonShowAllTrainers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShowAllTrainersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -142,6 +159,11 @@ public class Gym extends javax.swing.JFrame {
         });
 
         jButtonRemoveAllTables.setText("Видалити таблиці з БД");
+        jButtonRemoveAllTables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveAllTablesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -160,6 +182,7 @@ public class Gym extends javax.swing.JFrame {
 
         jConsoleTextArea.setEditable(false);
         jConsoleTextArea.setColumns(20);
+        jConsoleTextArea.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         jConsoleTextArea.setRows(5);
         jScrollPane1.setViewportView(jConsoleTextArea);
 
@@ -201,8 +224,53 @@ public class Gym extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAddTablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddTablesActionPerformed
-        // TODO add your handling code here:
+        DBManager dbManager = new DBManager();
+        try {
+            dbManager.createTables();
+            ConsoleWriter.getInstance().write("Tables created successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
     }//GEN-LAST:event_jButtonAddTablesActionPerformed
+
+    private void jButtonRemoveAllTablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveAllTablesActionPerformed
+        DBManager dbManager = new DBManager();
+        try {
+            dbManager.deleteTables();
+            ConsoleWriter.getInstance().write("Tables deleted successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonRemoveAllTablesActionPerformed
+
+    private void jButtonAddTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddTrainerActionPerformed
+        Trainers trainers = new Trainers();
+        try {
+            trainers.addTrainer();
+            ConsoleWriter.getInstance().write("Trainers inserted successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonAddTrainerActionPerformed
+
+    private void jButtonRemoveTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveTrainerActionPerformed
+        Trainers trainers = new Trainers();
+        try {
+            trainers.removeTrainer();
+            ConsoleWriter.getInstance().write("Trainer removed successfully.");
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonRemoveTrainerActionPerformed
+
+    private void jButtonShowAllTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllTrainersActionPerformed
+        Trainers trainers = new Trainers();
+        try {
+            trainers.showTrainers();
+        } catch (SQLException ex) {
+            ConsoleWriter.getInstance().write(ex.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_jButtonShowAllTrainersActionPerformed
 
     /**
      * @param args the command line arguments
