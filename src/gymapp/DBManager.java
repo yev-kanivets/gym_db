@@ -2,6 +2,8 @@
 package gymapp;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -76,5 +78,28 @@ public class DBManager {
         
         stmt.executeBatch();
         stmt.close();     
+    }
+    
+    public void query(String query) throws SQLException {
+        Connection conn = GymConnection.getConnection();
+        Statement stmt = conn.createStatement();
+        
+        ConsoleWriter.getInstance().write(query);
+        
+        ResultSet rs = stmt.executeQuery(query);
+        ResultSetMetaData rsmt = rs.getMetaData();
+        
+        int columnCount = rsmt.getColumnCount();
+        
+        while (rs.next()) {
+            StringBuilder sb = new StringBuilder();
+            
+            for (int i=1;i<=columnCount;i++) {
+                sb.append(rs.getString(i));
+                sb.append("; ");
+            }
+            
+            ConsoleWriter.getInstance().write(sb.toString());
+        }
     }
 }
